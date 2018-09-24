@@ -1,0 +1,29 @@
+<div class="loginpanel">
+  <form (ngSubmit)="onSubmit()" #f="ngForm">    
+  <div class="txt form-group">
+    <input id="Username" type="text" required placeholder="Username" [(ngModel)]="model.username" name="username" />
+    <label for="user" class="entypo-user"></label>
+  </div>
+  <div class="txt">
+    <input id="Password" type="password" placeholder="Password" [(ngModel)]="model.password" name="password" />
+    <label for="Password" class="entypo-lock"></label>
+  </div>
+  <div class="buttons">
+    <input type="button" value="Login" (click)="login()"/>    
+  </div>
+  
+  <div class="hr">
+    <div></div>
+    <div>OR</div>
+    <div></div>
+  </div>
+  
+  <div class="social">
+    <a href="javascript:void(0)" class="facebook"></a>
+    <a href="javascript:void(0)" class="twitter"></a>
+    <a href="javascript:void(0)" class="googleplus"></a>
+  </div>
+</form>
+</div>
+
+<span class="resp-info"></span>

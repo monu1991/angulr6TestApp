@@ -1,0 +1,25 @@
+<h2>Inventory List</h2>
+<table class="table table-inverse">
+    <thead>
+      <tr>
+        <th>Product Name </th>
+        <th>Supplier Name </th>
+        <th>Quantity </th>
+        <th>Unit price </th>
+        <th>Total cost </th>
+        <th>Actions </th>
+        <th><button class="btn" onclick="javascript: location.href='/inventoryModify'">Add Item</button></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of model.inventoryList">
+          <td>{{item.productname}}</td>
+          <td>{{item.suppliername}}</td>
+          <td>{{item.quantity}}</td>
+          <td>{{item.unitprice | currency}}</td>
+          <td>{{item.quantity * item.unitprice | currency}}</td>
+          <td><button class="btn" (click)="editItem(item._id)" id={{item._id}}>Edit</button></td>
+          <td></td>
+        </tr>
+    </tbody>
+  </table>

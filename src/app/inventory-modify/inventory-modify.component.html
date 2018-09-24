@@ -1,0 +1,77 @@
+<div class="container">
+  <h1>Inventory Detail</h1>
+  <form (ngSubmit)="onSubmit()" class="form" #f="ngForm" name="inventory">
+      <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="productname">Product Name</label>
+              <input type="text" class="form-control" [(ngModel)]="model.productname" placeholder="" [disabled]="productDisable" name="productname">
+            </div>
+          </div>
+          <!--  col-md-6   -->
+    
+          <!-- <div class="col-md-6">
+            <div class="form-group">
+              <label for="suppliername">Supplier Name</label>
+              <input type="text" class="form-control" placeholder="" [(ngModel)]="model.suppliername" name="suppliername">
+            </div>
+          </div> -->
+
+          <div class="form-group">
+              <label for="select">Product Name</label>
+              <select class="dropdown" [(ngModel)]="model.suppliername" name="model.supplier">
+                  <option *ngFor="let supplier of suppliers" value={{supplier.name}}  >
+                      {{supplier.name}}
+                  </option>
+              </select>
+          </div>
+
+         
+          <!--  col-md-6   -->
+        </div>
+    
+    
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="quantity">Quantity</label>
+              <input type="text" class="form-control" type="number" placeholder="" [(ngModel)]="model.quantity" name="quantity">
+            </div>
+    
+    
+          </div>
+          <!--  col-md-6   -->
+    
+          <div class="col-md-6">
+    
+            <div class="form-group">
+              <label for="unitprice">Unit Price</label>
+              <input class="form-control" type="number"  placeholder="" [(ngModel)]="model.unitprice" name="unitprice">
+            </div>
+          </div>
+          <!--  col-md-6   -->
+        </div>
+        <!--  row   -->
+    
+    
+        <div class="row">
+          <div class="col-md-6">
+    
+            <div class="form-group">
+              <label for="totalcost">Total Cost</label>
+              <input class="form-control" type="number"  placeholder="" [(ngModel)]="model.totalcost" name="totalcost">
+            </div>
+          </div>
+          <!--  col-md-6   -->
+    
+        </div>
+       
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <div class="row">
+      <div class="col-md-6">
+    <button class="btn" onclick="javascript: location.href='/inventoryList'">Return to List</button>
+  </div>
+  </div>
+</div>
